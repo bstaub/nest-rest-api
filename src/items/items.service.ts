@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { Item } from './interfaces/item.interface'
+import { Item } from './interfaces/item.interface';
 
 @Injectable()
 export class ItemsService {
@@ -20,5 +20,9 @@ export class ItemsService {
 
   findAll(): Item[] {
     return this.items;
+  }
+
+  findOne(id: string): Item {
+    return this.items.find(item => item.id === id);
   }
 }
